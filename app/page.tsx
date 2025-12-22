@@ -1,121 +1,176 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-green-50 p-6">
-      {/* Header / Navbar */}
-<header className="w-full bg-white shadow-sm py-4 mb-10">
-  <div className="max-w-5xl mx-auto flex justify-between items-center px-6">
-    <h1 className="text-2xl font-bold text-green-700">
-      RTD Tea 🧋
-    </h1>
-    <nav className="space-x-6 text-gray-700 font-medium">
-      <a href="#" className="hover:text-green-600">Home</a>
-      <a href="#products" className="hover:text-green-600">Products</a>
-      <a href="#contact" className="hover:text-green-600">Contact</a>
-    </nav>
-  </div>
-</header>
+    <main className="min-h-screen bg-green-50">
 
-
-      
-     <h1 id="products" className="text-3xl font-bold text-center text-green-700 mb-2">
-  Our Products
-</h1>
-
-<p className="text-center text-gray-600 mb-8">
-  Refreshing Ready-to-Drink Tea made for everyday enjoyment
-</p>
-
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-        
-        {/* Product 1 */}
-        <div className="bg-white rounded-2xl shadow-lg p-6 text-center">
-          <Image
-            src="/fruit.jpg"
-            alt="Lemon Iced Tea"
-            width={300}
-            height={200}
-            className="rounded-xl mx-auto"
-          />
-          <h2 className="text-xl font-bold text-green-700 mt-4">
-            Lemon Iced Tea
-          </h2>
-          <p className="text-gray-600 mt-2">
-            Refreshing lemon flavored RTD tea.
-          </p>
-          <p className="text-lg font-semibold text-green-800 mt-3">
-            $2.99
-          </p>
-          <a
-            href="https://wa.me/15551234567?text=Hello%20I%20want%20to%20order%20Lemon%20Iced%20Tea"
-            target="_blank"
-            className="mt-4 block bg-green-600 text-white py-2 rounded-lg hover:bg-green-700"
-          >
-            Order on WhatsApp
-          </a>
+      {/* ================= HEADER ================= */}
+      <header className="w-full bg-white shadow-sm py-4">
+        <div className="max-w-5xl mx-auto flex justify-between items-center px-6">
+          <h1 className="text-2xl font-bold text-green-700">
+            RTD Tea 🧋
+          </h1>
+          <nav className="space-x-6 text-gray-700 font-medium">
+            <a href="#" className="hover:text-green-600">Home</a>
+            <a href="#products" className="hover:text-green-600">Products</a>
+            <a href="#contact" className="hover:text-green-600">Contact</a>
+          </nav>
         </div>
+      </header>
 
-        {/* Product 2 */}
-        <div className="bg-white rounded-2xl shadow-lg p-6 text-center">
-          <Image
-            src="/fruit.jpg"
-            alt="Peach Iced Tea"
-            width={300}
-            height={200}
-            className="rounded-xl mx-auto"
-          />
-          <h2 className="text-xl font-bold text-green-700 mt-4">
-            Peach Iced Tea
+      {/* ================= HERO ================= */}
+      <motion.section
+        className="py-24 bg-green-100 text-center"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <h1 className="text-4xl md:text-5xl font-bold text-green-800 mb-4">
+          Refreshing RTD Tea, Anytime 🧋
+        </h1>
+        <p className="text-gray-700 max-w-xl mx-auto">
+          Premium ready-to-drink tea made with quality ingredients for everyday enjoyment.
+        </p>
+      </motion.section>
+
+      {/* ================= PRODUCTS ================= */}
+      <motion.section
+        id="products"
+        className="py-20 bg-green-50"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        <div className="max-w-5xl mx-auto px-6">
+          <h2 className="text-3xl font-bold text-center text-green-700 mb-2">
+            Our Products
           </h2>
-          <p className="text-gray-600 mt-2">
-            Smooth and sweet peach flavored RTD tea.
+          <p className="text-center text-gray-600 mb-12">
+            Refreshing Ready-to-Drink Tea made for everyday enjoyment
           </p>
-          <p className="text-lg font-semibold text-green-800 mt-3">
-            $3.49
-          </p>
-          <a
-            href="https://wa.me/15551234567?text=Hello%20I%20want%20to%20order%20Peach%20Iced%20Tea"
-            target="_blank"
-            className="mt-4 block bg-green-600 text-white py-2 rounded-lg hover:bg-green-700"
-          >
-            Order on WhatsApp
-          </a>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            {/* Product 1 */}
+            <motion.div
+              className="bg-white rounded-2xl shadow-lg p-6 text-center"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              viewport={{ once: true }}
+            >
+              <Image
+                src="/fruit.jpg"
+                alt="Lemon Iced Tea"
+                width={300}
+                height={200}
+                className="rounded-xl mx-auto"
+              />
+              <h3 className="text-xl font-bold text-green-700 mt-4">
+                Lemon Iced Tea
+              </h3>
+              <p className="text-gray-600 mt-2">
+                Refreshing lemon flavored RTD tea.
+              </p>
+              <p className="text-lg font-semibold text-green-800 mt-3">
+                $2.99
+              </p>
+              <a
+                href="https://wa.me/15551234567?text=Hello%20I%20want%20to%20order%20Lemon%20Iced%20Tea"
+                target="_blank"
+                className="mt-4 block bg-green-600 text-white py-2 rounded-lg hover:bg-green-700"
+              >
+                Order on WhatsApp
+              </a>
+            </motion.div>
+
+            {/* Product 2 */}
+            <motion.div
+              className="bg-white rounded-2xl shadow-lg p-6 text-center"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+              <Image
+                src="/fruit.jpg"
+                alt="Peach Iced Tea"
+                width={300}
+                height={200}
+                className="rounded-xl mx-auto"
+              />
+              <h3 className="text-xl font-bold text-green-700 mt-4">
+                Peach Iced Tea
+              </h3>
+              <p className="text-gray-600 mt-2">
+                Smooth and sweet peach flavored RTD tea.
+              </p>
+              <p className="text-lg font-semibold text-green-800 mt-3">
+                $3.49
+              </p>
+              <a
+                href="https://wa.me/15551234567?text=Hello%20I%20want%20to%20order%20Peach%20Iced%20Tea"
+                target="_blank"
+                className="mt-4 block bg-green-600 text-white py-2 rounded-lg hover:bg-green-700"
+              >
+                Order on WhatsApp
+              </a>
+            </motion.div>
+
+          </div>
         </div>
+      </motion.section>
 
-      </div>
-      {/* About Section */}
-<div className="max-w-3xl mx-auto mt-16 bg-white rounded-2xl shadow-md p-6 text-center">
-  <h2 className="text-2xl font-bold text-green-700 mb-4">
-    About Our RTD Tea 🍃
-  </h2>
-  <p className="text-gray-600 leading-relaxed">
-    Our Ready-to-Drink Tea is crafted using premium tea leaves and natural
-    flavors. We focus on freshness, quality, and great taste so you can enjoy
-    a refreshing tea anytime, anywhere.
-  </p>
-</div>
-{/* Contact Section */}
-<div id="contact" className="max-w-3xl mx-auto mt-16 mb-10 bg-green-100 rounded-2xl p-6 text-center">
-  <h2 className="text-2xl font-bold text-green-800 mb-4">
-    Contact Us ☎️
-  </h2>
+      {/* ================= ABOUT ================= */}
+      <motion.section
+        className="py-20 bg-white"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+      >
+        <div className="max-w-3xl mx-auto text-center px-6">
+          <h2 className="text-2xl font-bold text-green-700 mb-4">
+            About Our RTD Tea 🍃
+          </h2>
+          <p className="text-gray-600 leading-relaxed">
+            Our Ready-to-Drink Tea is crafted using premium tea leaves and natural
+            flavors. We focus on freshness, quality, and great taste so you can
+            enjoy a refreshing tea anytime, anywhere.
+          </p>
+        </div>
+      </motion.section>
 
-  <p className="text-gray-700 mb-2">
-    Have questions or want to place an order?
-  </p>
-  <p className="text-gray-700">
-    📞 Phone / WhatsApp: <strong>Available on request</strong>
-  </p>
-</div>
-{/* Footer */}
-<footer className="mt-20 py-6 bg-white border-t text-center text-gray-600">
-  <p className="text-sm">
-    © {new Date().getFullYear()} RTD Tea. All rights reserved.
-  </p>
-</footer>
+      {/* ================= CONTACT ================= */}
+      <motion.section
+        id="contact"
+        className="py-20 bg-green-100"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+      >
+        <div className="max-w-3xl mx-auto text-center px-6">
+          <h2 className="text-2xl font-bold text-green-800 mb-4">
+            Contact Us ☎️
+          </h2>
+          <p className="text-gray-700 mb-2">
+            Have questions or want to place an order?
+          </p>
+          <p className="text-gray-700">
+            📞 Phone / WhatsApp: <strong>Available on request</strong>
+          </p>
+        </div>
+      </motion.section>
 
+      {/* ================= FOOTER ================= */}
+      <footer className="py-6 bg-white border-t text-center text-gray-600">
+        <p className="text-sm">
+          © {new Date().getFullYear()} RTD Tea. All rights reserved.
+        </p>
+      </footer>
 
     </main>
   );
