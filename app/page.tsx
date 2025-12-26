@@ -145,25 +145,38 @@ export default function Home() {
       </motion.section>
 
       {/* ================= CONTACT ================= */}
-      <motion.section
-        id="contact"
-        className="py-20 bg-green-100"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-      >
-        <div className="max-w-3xl mx-auto text-center px-6">
-          <h2 className="text-2xl font-bold text-green-800 mb-4">
-            Contact Us ☎️
-          </h2>
-          <p className="text-gray-700 mb-2">
-            Have questions or want to place an order?
-          </p>
-          <p className="text-gray-700">
-            📞 Phone / WhatsApp: <strong>Available on request</strong>
-          </p>
-        </div>
-      </motion.section>
+<motion.section
+  id="contact"
+  className="py-24 bg-green-100"
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+>
+  <div className="max-w-3xl mx-auto text-center px-6">
+    
+    <h2 className="text-3xl font-bold text-green-800 mb-4">
+      Contact Us ☎️
+    </h2>
+
+    <p className="text-gray-700 mb-6">
+      Have questions or want to place an order?  
+      Reach out to us directly on WhatsApp.
+    </p>
+
+    <a
+      href="https://wa.me/15551234567?text=Hello%20I%20want%20to%20know%20more%20about%20your%20RTD%20Tea"
+      target="_blank"
+      className="inline-block bg-green-600 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-green-700 transition"
+    >
+      💬 Chat on WhatsApp
+    </a>
+
+    <p className="text-sm text-gray-600 mt-4">
+      📞 Phone / WhatsApp: <strong>Available on request</strong>
+    </p>
+
+  </div>
+</motion.section>
 
       {/* ================= FOOTER ================= */}
       <footer className="py-6 bg-white border-t text-center text-gray-600">
